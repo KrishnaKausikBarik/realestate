@@ -52,7 +52,7 @@
   justify-content: center;
 }
 .gb-content h2 {
-  font: 500 calc(var(--s) * 32) / 1.15 var(--head);
+  font: 500 var(--type-heading) / 1.15 var(--head);
   letter-spacing: -0.01em;
   margin-bottom: calc(var(--s) * 14);
 }
@@ -60,7 +60,7 @@
   color: var(--gold);
 }
 .gb-text {
-  font-size: calc(var(--s) * 14);
+  font-size: var(--type-small);
   line-height: 1.55;
   color: #3f3a32;
   margin-bottom: calc(var(--s) * 18);
@@ -82,7 +82,7 @@
   border-bottom: 0;
 }
 .gb-no {
-  font-size: calc(var(--s) * 11);
+  font-size: var(--type-caption);
   color: var(--gold);
 }
 .gb-ico {
@@ -91,7 +91,7 @@
   color: #2b2418;
 }
 .gb-label {
-  font-size: calc(var(--s) * 14);
+  font-size: var(--type-small);
   color: #2b2418;
 }
 
@@ -106,7 +106,7 @@
   padding: 0 calc(var(--s) * 18);
   background: var(--ink);
   color: #fff !important;
-  font: 500 calc(var(--s) * 14) var(--body);
+  font: 500 var(--type-small) var(--body);
   border-radius: calc(var(--s) * 7);
   transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -148,16 +148,16 @@
     padding: calc(var(--s) * 36) var(--gutter) calc(var(--s) * 56);
   }
   .gb-content h2 {
-    font-size: calc(var(--s) * 36);
+    font-size: var(--type-heading);
   }
   .gb-text {
-    font-size: calc(var(--s) * 16);
+    font-size: var(--type-body);
   }
   .gb-label {
-    font-size: calc(var(--s) * 16);
+    font-size: var(--type-body);
   }
   .gb-no {
-    font-size: calc(var(--s) * 12);
+    font-size: var(--type-small);
   }
   .gb-ico {
     width: calc(var(--s) * 16);
@@ -165,7 +165,7 @@
   }
   .gb-btn {
     height: calc(var(--s) * 46);
-    font-size: calc(var(--s) * 15);
+    font-size: var(--type-small);
   }
 }
 
@@ -183,11 +183,11 @@
     padding: 32px var(--gutter) 48px;
   }
   .gb-content h2 {
-    font-size: clamp(30px, 8.6vw, 38px);
+    font-size: var(--type-heading);
     margin-bottom: 14px;
   }
   .gb-text {
-    font-size: 16px;
+    font-size: var(--type-body);
     margin-bottom: 24px;
   }
   .gb-list li {
@@ -195,19 +195,19 @@
     padding: 14px 0;
   }
   .gb-no {
-    font-size: 13px;
+    font-size: var(--type-small);
   }
   .gb-ico {
     width: 18px;
     height: 18px;
   }
   .gb-label {
-    font-size: 17px;
+    font-size: var(--type-body);
   }
   .gb-btn {
     align-self: stretch;
     height: 54px;
-    font-size: 15px;
+    font-size: var(--type-small);
     padding: 0 20px;
   }
   .gb-arrow {

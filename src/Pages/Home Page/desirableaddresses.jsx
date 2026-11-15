@@ -1,5 +1,8 @@
 import React from "react";
-import "./desirableaddresses.css";
+import "./desirableaddresses.css";import addressImage1 from "./Images/AmericaProp/3899e7fae3dfaa2889132a9b5b9996b2ae47cbcb.jpg";
+import addressImage2 from "./Images/AmericaProp/4a6a454c038631e36b4025d78308a779c309ed67.jpg";
+import addressImage3 from "./Images/AmericaProp/901e8214c0ef3951d46e59c89977e609dfec41a2.jpg";
+import addressImage4 from "./Images/AmericaProp/9d9eb16d9e53dfcf0be953b8d3c7be267729561a.jpg";
 
 /*
   SAMPLE IMAGES
@@ -13,7 +16,7 @@ const ADDRESSES = [
   {
     id: 1,
     size: "xs",
-    image: "https://picsum.photos/seed/alpine-sanctuarium/600/1040",
+    image: addressImage1,
     name: "Alpine Sanctuarium",
     location: "Big Sur / Aspen",
     price: "$450/night",
@@ -21,7 +24,7 @@ const ADDRESSES = [
   {
     id: 2,
     size: "lg",
-    image: "https://picsum.photos/seed/ocean-glass-house/900/1100",
+    image: addressImage2,
     name: "Ocean Glass House",
     location: "Malibu, USA",
     price: "$820/night",
@@ -29,7 +32,7 @@ const ADDRESSES = [
   {
     id: 3,
     size: "md",
-    image: "https://picsum.photos/seed/nordic-retreat/900/660",
+    image: addressImage3,
     name: "Nordic Retreat",
     location: "Lake Tahoe, USA",
     price: "$450/night",
@@ -37,7 +40,7 @@ const ADDRESSES = [
   {
     id: 4,
     size: "tall",
-    image: "https://picsum.photos/seed/desert-mirage/900/1100",
+    image: addressImage4,
     name: "Desert Mirage",
     location: "Scottsdale, Arizona",
     price: "$650/night",

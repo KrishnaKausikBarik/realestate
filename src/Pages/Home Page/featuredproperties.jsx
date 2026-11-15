@@ -1,5 +1,10 @@
 import React from "react";
 import "./featuredproperties.css";
+import propertyImage1 from "./Images/FeaturedProperties/008a15063da1d4b5d1a63c873a54e10cff0b219f.jpg";
+import propertyImage2 from "./Images/FeaturedProperties/1e223e1f55a922792f67c7c9bc03125a30f0a40e.jpg";
+import propertyImage3 from "./Images/FeaturedProperties/89582ee26f252013b38821174f68938c60c15b22.jpg";
+import propertyImage4 from "./Images/FeaturedProperties/9d9eb16d9e53dfcf0be953b8d3c7be267729561a.jpg";
+import propertyImage5 from "./Images/FeaturedProperties/deb74e31d180ea72de376f01f4f0f262e37c6570.jpg";
 
 /*
   SAMPLE IMAGES
@@ -11,7 +16,7 @@ import "./featuredproperties.css";
 const PROPERTIES = [
   {
     id: 1,
-    image: "https://picsum.photos/seed/pinnacle-1/900/680",
+    image: propertyImage1,
     status: "For Sale",
     beds: 5,
     baths: 2,
@@ -21,7 +26,7 @@ const PROPERTIES = [
   },
   {
     id: 2,
-    image: "https://picsum.photos/seed/pinnacle-2/900/680",
+    image: propertyImage2,
     status: "For Sale",
     beds: 5,
     baths: 2,
@@ -31,7 +36,7 @@ const PROPERTIES = [
   },
   {
     id: 3,
-    image: "https://picsum.photos/seed/pinnacle-3/900/680",
+    image: propertyImage3,
     status: "For Sale",
     beds: 5,
     baths: 2,
@@ -41,7 +46,7 @@ const PROPERTIES = [
   },
   {
     id: 4,
-    image: "https://picsum.photos/seed/pinnacle-4/900/680",
+    image: propertyImage4,
     status: "For Sale",
     beds: 5,
     baths: 2,
@@ -51,7 +56,7 @@ const PROPERTIES = [
   },
   {
     id: 5,
-    image: "https://picsum.photos/seed/pinnacle-5/900/680",
+    image: propertyImage5,
     status: "For Sale",
     beds: 5,
     baths: 2,
@@ -61,7 +66,7 @@ const PROPERTIES = [
   },
   {
     id: 6,
-    image: "https://picsum.photos/seed/pinnacle-6/900/680",
+    image: propertyImage5,
     status: "For Sale",
     beds: 5,
     baths: 2,

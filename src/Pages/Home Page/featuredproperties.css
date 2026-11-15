@@ -34,7 +34,7 @@
   margin-bottom: calc(var(--s) * 18);
 }
 .fp-head h2 {
-  font: 500 calc(var(--s) * 38) / 1.1 var(--head);
+  font: 500 var(--type-heading) / 1.1 var(--head);
   letter-spacing: -0.01em;
   margin-bottom: calc(var(--s) * 16);
 }
@@ -42,7 +42,7 @@
   color: var(--gold);
 }
 .fp-head p {
-  font-size: calc(var(--s) * 17);
+  font-size: var(--type-body);
   line-height: 1.5;
   color: #444;
 }
@@ -55,7 +55,7 @@
   padding: 0 calc(var(--s) * 18);
   background: var(--ink);
   color: #fff !important;
-  font: 500 calc(var(--s) * 14) var(--body);
+  font: 500 var(--type-small) var(--body);
   border-radius: calc(var(--s) * 7);
   white-space: nowrap;
   transition: transform 0.2s ease, background 0.2s ease;
@@ -106,7 +106,7 @@
   padding: calc(var(--s) * 6) calc(var(--s) * 13);
   background: #fff;
   border-radius: 999px;
-  font-size: calc(var(--s) * 11);
+  font-size: var(--type-caption);
   font-weight: 500;
 }
 
@@ -117,7 +117,7 @@
   align-items: center;
   gap: calc(var(--s) * 10);
   margin-top: calc(var(--s) * 14);
-  font-size: calc(var(--s) * 12);
+  font-size: var(--type-small);
   color: #3d3d3d;
 }
 .fp-meta li {
@@ -139,7 +139,7 @@
   flex: none;
 }
 .fp-card h3 {
-  font: 400 calc(var(--s) * 19) / 1.2 var(--body);
+  font: 400 var(--type-title) / 1.2 var(--body);
   margin-top: calc(var(--s) * 14);
 }
 .fp-price-row {
@@ -150,7 +150,7 @@
   margin-top: calc(var(--s) * 12);
 }
 .fp-price-row strong {
-  font: 700 calc(var(--s) * 13.5) var(--body);
+  font: 700 var(--type-small) var(--body);
   white-space: nowrap;
   flex: none;
 }
@@ -159,7 +159,7 @@
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: calc(var(--s) * 12);
+  font-size: var(--type-small);
   color: #77777a;
 }
 .fp-price-row span::before {
@@ -202,11 +202,11 @@
     gap: 22px;
   }
   .fp-head h2 {
-    font-size: clamp(34px, 9.6vw, 44px);
+    font-size: var(--type-heading);
     margin-bottom: 12px;
   }
   .fp-head p {
-    font-size: 17px;
+    font-size: var(--type-body);
   }
   .fp-head p br {
     display: none;
@@ -215,7 +215,7 @@
     width: 100%;
     justify-content: space-between;
     height: 54px;
-    font-size: 15px;
+    font-size: var(--type-small);
     padding: 0 20px;
   }
   .fp-arrow {
@@ -230,11 +230,11 @@
   .fp-pill {
     top: 12px;
     left: 12px;
-    font-size: 12px;
+    font-size: var(--type-small);
     padding: 6px 14px;
   }
   .fp-meta {
-    font-size: 14px;
+    font-size: var(--type-small);
     margin-top: 16px;
   }
   .fp-meta-ico {
@@ -242,7 +242,7 @@
     height: 16px;
   }
   .fp-card h3 {
-    font-size: 22px;
+    font-size: var(--type-heading);
     margin-top: 12px;
   }
   .fp-price-row {
@@ -250,10 +250,10 @@
     margin-top: 12px;
   }
   .fp-price-row strong {
-    font-size: 16px;
+    font-size: var(--type-body);
   }
   .fp-price-row span {
-    font-size: 13px;
+    font-size: var(--type-small);
   }
   .fp-price-row span::before {
     margin-right: 6px;

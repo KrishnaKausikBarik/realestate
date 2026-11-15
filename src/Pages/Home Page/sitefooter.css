@@ -60,7 +60,7 @@
   max-width: 100%;
 }
 .ft-brand p {
-  font-size: calc(var(--s) * 11);
+  font-size: var(--type-caption);
   line-height: 1.75;
   color: var(--text);
   max-width: 34ch;
@@ -91,7 +91,7 @@
 
 /* ---------- link columns ---------- */
 .ft-col h4 {
-  font: 500 calc(var(--s) * 10.5) var(--head);
+  font: 500 var(--type-caption) var(--head);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #fff;
@@ -101,7 +101,7 @@
   margin-top: calc(var(--s) * 12);
 }
 .ft-col li a {
-  font-size: calc(var(--s) * 11.5);
+  font-size: var(--type-small);
   line-height: 1.4;
   color: var(--text);
   transition: color 0.2s ease, opacity 0.2s ease;
@@ -129,7 +129,7 @@ nav.ft-col li a:focus-visible {
   margin-top: calc(var(--s) * 14);
 }
 .ft-contact li a {
-  font-size: calc(var(--s) * 11.5);
+  font-size: var(--type-small);
   overflow-wrap: anywhere;
 }
 .ft-ico {
@@ -151,7 +151,7 @@ nav.ft-col li a:focus-visible {
   color: var(--muted);
 }
 .ft-hours {
-  font-size: calc(var(--s) * 9.5);
+  font-size: var(--type-caption);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -166,7 +166,7 @@ nav.ft-col li a:focus-visible {
   margin-top: calc(var(--s) * 52);
   padding-top: calc(var(--s) * 22);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
-  font-size: calc(var(--s) * 8.8);
+  font-size: var(--type-caption);
   letter-spacing: 0.1em;
   color: var(--muted);
 }
@@ -208,7 +208,7 @@ nav.ft-col li a:focus-visible {
     grid-column: 1 / -1;
   }
   .ft-brand p {
-    font-size: calc(var(--s) * 13);
+    font-size: var(--type-small);
     max-width: 52ch;
   }
   .ft-logo img {
@@ -223,11 +223,11 @@ nav.ft-col li a:focus-visible {
     height: calc(var(--s) * 14);
   }
   .ft-col h4 {
-    font-size: calc(var(--s) * 12);
+    font-size: var(--type-small);
   }
   .ft-col li a,
   .ft-contact li a {
-    font-size: calc(var(--s) * 13);
+    font-size: var(--type-small);
   }
   .ft-ico {
     width: calc(var(--s) * 28);
@@ -238,10 +238,10 @@ nav.ft-col li a:focus-visible {
     height: calc(var(--s) * 13);
   }
   .ft-hours {
-    font-size: calc(var(--s) * 10.5);
+    font-size: var(--type-caption);
   }
   .ft-bottom {
-    font-size: calc(var(--s) * 10);
+    font-size: var(--type-caption);
   }
 }
 
@@ -265,7 +265,7 @@ nav.ft-col li a:focus-visible {
     height: 72px;
   }
   .ft-brand p {
-    font-size: 16px;
+    font-size: var(--type-body);
     max-width: none;
     margin-bottom: 22px;
   }
@@ -278,7 +278,7 @@ nav.ft-col li a:focus-visible {
     height: 17px;
   }
   .ft-col h4 {
-    font-size: 13px;
+    font-size: var(--type-small);
     margin-bottom: 16px;
   }
   .ft-col li + li {
@@ -286,7 +286,7 @@ nav.ft-col li a:focus-visible {
   }
   .ft-col li a,
   .ft-contact li a {
-    font-size: 16px;
+    font-size: var(--type-body);
   }
   .ft-contact li {
     gap: 14px;
@@ -303,7 +303,7 @@ nav.ft-col li a:focus-visible {
     height: 17px;
   }
   .ft-hours {
-    font-size: 12.5px;
+    font-size: var(--type-small);
   }
   .ft-bottom {
     flex-direction: column;
@@ -311,7 +311,7 @@ nav.ft-col li a:focus-visible {
     gap: 14px;
     margin-top: 40px;
     padding-top: 22px;
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .ft-legal {
     flex-wrap: wrap;

@@ -26,12 +26,12 @@
 
 /* ---------- heading ---------- */
 .da-section h2 {
-  font: 500 calc(var(--s) * 34) / 1.12 var(--head);
+  font: 500 var(--type-heading) / 1.12 var(--head);
   letter-spacing: -0.01em;
   margin-bottom: calc(var(--s) * 14);
 }
 .da-sub {
-  font-size: calc(var(--s) * 15);
+  font-size: var(--type-small);
   line-height: 1.5;
   color: #444;
   margin-bottom: calc(var(--s) * 36);
@@ -106,15 +106,15 @@
   gap: calc(var(--s) * 4);
 }
 .da-info h3 {
-  font: 400 calc(var(--s) * 12.5 * var(--k)) / 1.35 var(--body);
+  font: 400 calc(var(--type-small) * var(--k)) / 1.35 var(--body);
 }
 .da-info span {
-  font-size: calc(var(--s) * 9.5 * var(--k));
+  font-size: calc(var(--type-caption) * var(--k));
   color: #7a7a7a;
 }
 .da-price {
   flex: none;
-  font: 400 calc(var(--s) * 15 * var(--k)) / 1 var(--body);
+  font: 400 calc(var(--type-small) * var(--k)) / 1 var(--body);
   color: #1a1209;
   white-space: nowrap;
 }
@@ -159,11 +159,11 @@
     padding-bottom: 56px;
   }
   .da-section h2 {
-    font-size: clamp(30px, 8.6vw, 40px);
+    font-size: var(--type-heading);
     margin-bottom: 12px;
   }
   .da-sub {
-    font-size: 17px;
+    font-size: var(--type-body);
     margin-bottom: 28px;
   }
   .da-grid {
@@ -182,12 +182,12 @@
     margin-top: 14px;
   }
   .da-info h3 {
-    font-size: 19px;
+    font-size: var(--type-title);
   }
   .da-info span {
-    font-size: 14px;
+    font-size: var(--type-small);
   }
   .da-price {
-    font-size: 20px;
+    font-size: var(--type-title);
   }
 }

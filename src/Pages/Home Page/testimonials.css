@@ -23,12 +23,12 @@
 
 /* ---------- heading ---------- */
 .tm-section h2 {
-  font: 500 calc(var(--s) * 36) / 1.12 var(--head);
+  font: 500 var(--type-heading) / 1.12 var(--head);
   letter-spacing: -0.01em;
   margin-bottom: calc(var(--s) * 14);
 }
 .tm-sub {
-  font-size: calc(var(--s) * 15);
+  font-size: var(--type-small);
   line-height: 1.5;
   color: #444;
   margin-bottom: calc(var(--s) * 38);
@@ -65,7 +65,7 @@
   color: var(--gold);
 }
 .tm-ref {
-  font-size: calc(var(--s) * 7.5);
+  font-size: var(--type-caption);
   letter-spacing: 0.14em;
   color: #b8955a;
   background: rgba(212, 168, 90, 0.12);
@@ -73,7 +73,7 @@
   border-radius: calc(var(--s) * 2);
 }
 .tm-card blockquote {
-  font: 300 calc(var(--s) * 13) / 1.85 var(--body);
+  font: 300 var(--type-small) / 1.85 var(--body);
   color: rgba(240, 230, 210, 0.86);
 }
 
@@ -95,13 +95,13 @@
 }
 .tm-foot strong {
   display: block;
-  font: 500 calc(var(--s) * 12) var(--head);
+  font: 500 var(--type-small) var(--head);
   color: #fff;
   margin-bottom: calc(var(--s) * 3);
 }
 .tm-foot span {
   display: block;
-  font-size: calc(var(--s) * 7.5);
+  font-size: var(--type-caption);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #b9a98d;
@@ -121,14 +121,14 @@
     grid-column: 1 / -1; /* third card spans the full width */
   }
   .tm-card blockquote {
-    font-size: calc(var(--s) * 15);
+    font-size: var(--type-small);
   }
   .tm-foot strong {
-    font-size: calc(var(--s) * 14);
+    font-size: var(--type-small);
   }
   .tm-foot span,
   .tm-ref {
-    font-size: calc(var(--s) * 9);
+    font-size: var(--type-caption);
   }
   .tm-foot img {
     width: calc(var(--s) * 34);
@@ -149,11 +149,11 @@
     padding-bottom: 56px;
   }
   .tm-section h2 {
-    font-size: clamp(28px, 8vw, 36px);
+    font-size: var(--type-heading);
     margin-bottom: 12px;
   }
   .tm-sub {
-    font-size: 16px;
+    font-size: var(--type-body);
     margin-bottom: 28px;
   }
   .tm-sub br {
@@ -174,11 +174,11 @@
     height: 20px;
   }
   .tm-ref {
-    font-size: 10px;
+    font-size: var(--type-caption);
     padding: 5px 9px;
   }
   .tm-card blockquote {
-    font-size: 17px;
+    font-size: var(--type-body);
   }
   .tm-foot {
     padding: 18px 22px;
@@ -189,9 +189,9 @@
     height: 44px;
   }
   .tm-foot strong {
-    font-size: 16px;
+    font-size: var(--type-body);
   }
   .tm-foot span {
-    font-size: 10.5px;
+    font-size: var(--type-caption);
   }
 }

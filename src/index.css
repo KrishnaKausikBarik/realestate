@@ -1,3 +1,13 @@
+
+:root {
+  --type-caption: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
+  --type-small: clamp(0.875rem, 0.84rem + 0.12vw, 0.9375rem);
+  --type-body: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --type-lead: clamp(1.125rem, 1.02rem + 0.35vw, 1.375rem);
+  --type-title: clamp(1.25rem, 1.1rem + 0.5vw, 1.625rem);
+  --type-heading: clamp(1.875rem, 1.55rem + 1.25vw, 2.5rem);
+  --type-display: clamp(2.75rem, 2rem + 3vw, 4.5rem);
+}
 *{
   margin: 0;
   padding: 0;

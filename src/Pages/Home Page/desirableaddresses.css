@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Lato:wght@400;700&display=swap");
+
+/* same scaling as the hero and featured sections */
+.da-section {
+  --s: clamp(0.9px, min(0.118vw, 0.155vh), 2.2px);
+  --gutter: 6.5vw;
+  --ink: #0a0a0a;
+  --head: "Montserrat", system-ui, sans-serif;
+  --body: "Lato", system-ui, sans-serif;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--body);
+  padding: calc(var(--s) * 56) var(--gutter) calc(var(--s) * 72);
+}
+.da-section *,
+.da-section *::before,
+.da-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.da-section a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- heading ---------- */
+.da-section h2 {
+  font: 500 calc(var(--s) * 34) / 1.12 var(--head);
+  letter-spacing: -0.01em;
+  margin-bottom: calc(var(--s) * 14);
+}
+.da-sub {
+  font-size: calc(var(--s) * 15);
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: calc(var(--s) * 36);
+}
+
+/* ---------- staggered grid ---------- */
+.da-grid {
+  display: grid;
+  grid-template-columns: 124fr 270fr 197fr 197fr;
+  column-gap: 2.6%;
+  align-items: start; /* cards hang from the top, each a different height */
+}
+
+.da-card {
+  --k: 1; /* text scale for this card */
+  display: block;
+}
+.da-xs {
+  --k: 0.8;
+}
+.da-lg {
+  --k: 1.15;
+}
+
+.da-media {
+  width: 100%;
+  border-radius: calc(var(--s) * 12);
+  overflow: hidden;
+  background: #e8e6e1;
+  box-shadow: 0 calc(var(--s) * 8) calc(var(--s) * 22) rgba(0, 0, 0, 0.16);
+}
+.da-xs .da-media {
+  aspect-ratio: 124 / 215;
+}
+.da-lg .da-media {
+  aspect-ratio: 270 / 331;
+}
+.da-md .da-media {
+  aspect-ratio: 197 / 144;
+}
+.da-tall .da-media {
+  aspect-ratio: 197 / 241;
+}
+.da-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.da-card:hover .da-media img {
+  transform: scale(1.05);
+}
+.da-card:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: calc(var(--s) * 12);
+}
+
+/* ---------- caption ---------- */
+.da-caption {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(var(--s) * 8);
+  margin-top: calc(var(--s) * 12);
+}
+.da-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--s) * 4);
+}
+.da-info h3 {
+  font: 400 calc(var(--s) * 12.5 * var(--k)) / 1.35 var(--body);
+}
+.da-info span {
+  font-size: calc(var(--s) * 9.5 * var(--k));
+  color: #7a7a7a;
+}
+.da-price {
+  flex: none;
+  font: 400 calc(var(--s) * 15 * var(--k)) / 1 var(--body);
+  color: #1a1209;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .da-media img {
+    transition: none;
+  }
+}
+
+/* ===================== TABLET (up to 1024px): 2 columns ===================== */
+@media (max-width: 1024px) {
+  .da-section {
+    --s: clamp(1.05px, 0.15vw, 1.4px);
+  }
+  .da-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(var(--s) * 22);
+    row-gap: calc(var(--s) * 36);
+  }
+  .da-card {
+    --k: 1.25;
+  }
+  .da-xs,
+  .da-lg {
+    --k: 1.25;
+  }
+  .da-xs .da-media,
+  .da-lg .da-media,
+  .da-md .da-media,
+  .da-tall .da-media {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ===================== PHONE (up to 600px): 1 column ===================== */
+@media (max-width: 600px) {
+  .da-section {
+    --s: 1px;
+    --gutter: 5vw;
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
+  .da-section h2 {
+    font-size: clamp(30px, 8.6vw, 40px);
+    margin-bottom: 12px;
+  }
+  .da-sub {
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+  .da-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+  .da-card,
+  .da-xs,
+  .da-lg {
+    --k: 1.5;
+  }
+  .da-media {
+    border-radius: 16px;
+  }
+  .da-caption {
+    margin-top: 14px;
+  }
+  .da-info h3 {
+    font-size: 19px;
+  }
+  .da-info span {
+    font-size: 14px;
+  }
+  .da-price {
+    font-size: 20px;
+  }
+}

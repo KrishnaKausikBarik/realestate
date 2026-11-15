@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Lato:wght@400;700&display=swap");
+
+/* --s uses the exact same scaling as the hero section, so text and buttons match */
+.fp-section {
+  --s: clamp(0.9px, min(0.118vw, 0.155vh), 2.2px);
+  --gutter: 6.5vw;
+  --ink: #0a0a0a;
+  --gold: #b8955a;
+  --head: "Montserrat", system-ui, sans-serif;
+  --body: "Lato", system-ui, sans-serif;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--body);
+  padding: calc(var(--s) * 60) var(--gutter) calc(var(--s) * 64);
+}
+.fp-section *,
+.fp-section *::before,
+.fp-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.fp-section a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- header ---------- */
+.fp-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(var(--s) * 24);
+  margin-bottom: calc(var(--s) * 18);
+}
+.fp-head h2 {
+  font: 500 calc(var(--s) * 38) / 1.1 var(--head);
+  letter-spacing: -0.01em;
+  margin-bottom: calc(var(--s) * 16);
+}
+.fp-head h2 span {
+  color: var(--gold);
+}
+.fp-head p {
+  font-size: calc(var(--s) * 17);
+  line-height: 1.5;
+  color: #444;
+}
+
+.fp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--s) * 28);
+  height: calc(var(--s) * 44);
+  padding: 0 calc(var(--s) * 18);
+  background: var(--ink);
+  color: #fff !important;
+  font: 500 calc(var(--s) * 14) var(--body);
+  border-radius: calc(var(--s) * 7);
+  white-space: nowrap;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.fp-btn:hover {
+  transform: translateY(-1px);
+  background: #222;
+}
+.fp-arrow {
+  width: calc(var(--s) * 15);
+  height: calc(var(--s) * 15);
+  flex: none;
+}
+.fp-btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* ---------- grid ---------- */
+.fp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--s) * 28) calc(var(--s) * 21);
+  margin-top: calc(var(--s) * 18);
+}
+
+.fp-media {
+  position: relative;
+  aspect-ratio: 515 / 390;
+  border-radius: calc(var(--s) * 16);
+  overflow: hidden;
+  background: #e8e6e1; /* shows while the image loads */
+}
+.fp-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.fp-card:hover .fp-media img {
+  transform: scale(1.04);
+}
+.fp-pill {
+  position: absolute;
+  top: calc(var(--s) * 10);
+  left: calc(var(--s) * 10);
+  padding: calc(var(--s) * 6) calc(var(--s) * 13);
+  background: #fff;
+  border-radius: 999px;
+  font-size: calc(var(--s) * 11);
+  font-weight: 500;
+}
+
+/* ---------- card text ---------- */
+.fp-meta {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--s) * 10);
+  margin-top: calc(var(--s) * 14);
+  font-size: calc(var(--s) * 12);
+  color: #3d3d3d;
+}
+.fp-meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--s) * 8);
+}
+.fp-meta li + li::before {
+  content: "";
+  width: calc(var(--s) * 2);
+  height: calc(var(--s) * 2);
+  border-radius: 50%;
+  background: #9a9a9a;
+  margin-right: calc(var(--s) * 2);
+}
+.fp-meta-ico {
+  width: calc(var(--s) * 11);
+  height: calc(var(--s) * 11);
+  flex: none;
+}
+.fp-card h3 {
+  font: 400 calc(var(--s) * 19) / 1.2 var(--body);
+  margin-top: calc(var(--s) * 14);
+}
+.fp-price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap; /* price and address always stay on one line */
+  gap: calc(var(--s) * 14);
+  margin-top: calc(var(--s) * 12);
+}
+.fp-price-row strong {
+  font: 700 calc(var(--s) * 13.5) var(--body);
+  white-space: nowrap;
+  flex: none;
+}
+.fp-price-row span {
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: calc(var(--s) * 12);
+  color: #77777a;
+}
+.fp-price-row span::before {
+  content: "·";
+  margin-right: calc(var(--s) * 9);
+  color: #aaa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fp-btn,
+  .fp-media img {
+    transition: none;
+  }
+}
+
+/* ===================== TABLET (up to 1024px): 2 columns ===================== */
+@media (max-width: 1024px) {
+  .fp-section {
+    --s: clamp(1.05px, 0.15vw, 1.4px);
+    padding-top: calc(var(--s) * 56);
+    padding-bottom: calc(var(--s) * 56);
+  }
+  .fp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(var(--s) * 32) calc(var(--s) * 22);
+  }
+}
+
+/* ===================== PHONE (up to 600px): 1 column ===================== */
+@media (max-width: 600px) {
+  .fp-section {
+    --s: 1px;
+    --gutter: 5vw;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .fp-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+  .fp-head h2 {
+    font-size: clamp(34px, 9.6vw, 44px);
+    margin-bottom: 12px;
+  }
+  .fp-head p {
+    font-size: 17px;
+  }
+  .fp-head p br {
+    display: none;
+  }
+  .fp-btn {
+    width: 100%;
+    justify-content: space-between;
+    height: 54px;
+    font-size: 15px;
+    padding: 0 20px;
+  }
+  .fp-arrow {
+    width: 18px;
+    height: 18px;
+  }
+  .fp-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-top: 28px;
+  }
+  .fp-pill {
+    top: 12px;
+    left: 12px;
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+  .fp-meta {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  .fp-meta-ico {
+    width: 16px;
+    height: 16px;
+  }
+  .fp-card h3 {
+    font-size: 22px;
+    margin-top: 12px;
+  }
+  .fp-price-row {
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .fp-price-row strong {
+    font-size: 16px;
+  }
+  .fp-price-row span {
+    font-size: 13px;
+  }
+  .fp-price-row span::before {
+    margin-right: 6px;
+  }
+}

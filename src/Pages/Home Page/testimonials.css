@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Lato:wght@300;400;700&display=swap");
+
+/* same scaling as the other sections */
+.tm-section {
+  --s: clamp(0.9px, min(0.118vw, 0.155vh), 2.2px);
+  --gutter: 6.5vw;
+  --gold: #d4a85a;
+  --card: #2b1b07;
+  --head: "Montserrat", system-ui, sans-serif;
+  --body: "Lato", system-ui, sans-serif;
+  background: #fff;
+  color: #0a0a0a;
+  font-family: var(--body);
+  padding: calc(var(--s) * 56) var(--gutter) calc(var(--s) * 72);
+}
+.tm-section *,
+.tm-section *::before,
+.tm-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- heading ---------- */
+.tm-section h2 {
+  font: 500 calc(var(--s) * 36) / 1.12 var(--head);
+  letter-spacing: -0.01em;
+  margin-bottom: calc(var(--s) * 14);
+}
+.tm-sub {
+  font-size: calc(var(--s) * 15);
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: calc(var(--s) * 38);
+}
+
+/* ---------- cards ---------- */
+.tm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--s) * 20);
+}
+.tm-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: calc(var(--s) * 9);
+  overflow: hidden;
+  box-shadow: 0 calc(var(--s) * 12) calc(var(--s) * 26) rgba(40, 25, 5, 0.2);
+  border: 1px solid rgba(212, 168, 90, 0.18);
+}
+.tm-body {
+  flex: 1;
+  padding: calc(var(--s) * 22) calc(var(--s) * 22) calc(var(--s) * 28);
+}
+.tm-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: calc(var(--s) * 20);
+}
+.tm-mark {
+  width: calc(var(--s) * 15);
+  height: calc(var(--s) * 15);
+  color: var(--gold);
+}
+.tm-ref {
+  font-size: calc(var(--s) * 7.5);
+  letter-spacing: 0.14em;
+  color: #b8955a;
+  background: rgba(212, 168, 90, 0.12);
+  padding: calc(var(--s) * 4) calc(var(--s) * 8);
+  border-radius: calc(var(--s) * 2);
+}
+.tm-card blockquote {
+  font: 300 calc(var(--s) * 13) / 1.85 var(--body);
+  color: rgba(240, 230, 210, 0.86);
+}
+
+/* footer band */
+.tm-foot {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--s) * 11);
+  padding: calc(var(--s) * 17) calc(var(--s) * 22);
+  background: rgba(255, 255, 255, 0.045);
+}
+.tm-foot img {
+  flex: none;
+  width: calc(var(--s) * 29);
+  height: calc(var(--s) * 29);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(212, 168, 90, 0.55);
+}
+.tm-foot strong {
+  display: block;
+  font: 500 calc(var(--s) * 12) var(--head);
+  color: #fff;
+  margin-bottom: calc(var(--s) * 3);
+}
+.tm-foot span {
+  display: block;
+  font-size: calc(var(--s) * 7.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b9a98d;
+  line-height: 1.4;
+}
+
+/* ===================== TABLET (up to 1024px): 2 columns ===================== */
+@media (max-width: 1024px) {
+  .tm-section {
+    --s: clamp(1.05px, 0.15vw, 1.4px);
+  }
+  .tm-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--s) * 22);
+  }
+  .tm-card:last-child {
+    grid-column: 1 / -1; /* third card spans the full width */
+  }
+  .tm-card blockquote {
+    font-size: calc(var(--s) * 15);
+  }
+  .tm-foot strong {
+    font-size: calc(var(--s) * 14);
+  }
+  .tm-foot span,
+  .tm-ref {
+    font-size: calc(var(--s) * 9);
+  }
+  .tm-foot img {
+    width: calc(var(--s) * 34);
+    height: calc(var(--s) * 34);
+  }
+  .tm-mark {
+    width: calc(var(--s) * 18);
+    height: calc(var(--s) * 18);
+  }
+}
+
+/* ===================== PHONE (up to 600px): 1 column ===================== */
+@media (max-width: 600px) {
+  .tm-section {
+    --s: 1px;
+    --gutter: 5vw;
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
+  .tm-section h2 {
+    font-size: clamp(28px, 8vw, 36px);
+    margin-bottom: 12px;
+  }
+  .tm-sub {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+  .tm-sub br {
+    display: none;
+  }
+  .tm-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .tm-card:last-child {
+    grid-column: auto;
+  }
+  .tm-body {
+    padding: 24px 22px 28px;
+  }
+  .tm-mark {
+    width: 20px;
+    height: 20px;
+  }
+  .tm-ref {
+    font-size: 10px;
+    padding: 5px 9px;
+  }
+  .tm-card blockquote {
+    font-size: 17px;
+  }
+  .tm-foot {
+    padding: 18px 22px;
+    gap: 12px;
+  }
+  .tm-foot img {
+    width: 44px;
+    height: 44px;
+  }
+  .tm-foot strong {
+    font-size: 16px;
+  }
+  .tm-foot span {
+    font-size: 10.5px;
+  }
+}

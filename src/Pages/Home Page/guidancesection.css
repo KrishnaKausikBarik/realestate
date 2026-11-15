@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Lato:wght@400;700&display=swap");
+
+/* same scaling as the other sections */
+.gb-section {
+  --s: clamp(0.9px, min(0.118vw, 0.155vh), 2.2px);
+  --gutter: 6.5vw;
+  --ink: #0a0a0a;
+  --gold: #b8955a;
+  --head: "Montserrat", system-ui, sans-serif;
+  --body: "Lato", system-ui, sans-serif;
+  position: relative;
+  aspect-ratio: 912 / 350; /* section height: bigger second number = taller, smaller = shorter */
+  display: flex;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--body);
+  overflow: hidden;
+}
+.gb-section *,
+.gb-section *::before,
+.gb-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.gb-section a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* the picture (desktop: fills the whole section behind the text) */
+.gb-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top; /* keeps the top, so the extra is cut from the bottom */
+  background-repeat: no-repeat;
+
+  /* fade the top and bottom edges into white */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 16%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 16%, #000 78%, transparent 100%);
+}
+
+/* text column on the right */
+.gb-content {
+  position: relative;
+  margin-left: 54%;
+  padding: calc(var(--s) * 22) var(--gutter) calc(var(--s) * 22) 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.gb-content h2 {
+  font: 500 calc(var(--s) * 32) / 1.15 var(--head);
+  letter-spacing: -0.01em;
+  margin-bottom: calc(var(--s) * 14);
+}
+.gb-content h2 span {
+  color: var(--gold);
+}
+.gb-text {
+  font-size: calc(var(--s) * 14);
+  line-height: 1.55;
+  color: #3f3a32;
+  margin-bottom: calc(var(--s) * 18);
+}
+
+/* numbered list */
+.gb-list {
+  list-style: none;
+  margin-bottom: calc(var(--s) * 22);
+}
+.gb-list li {
+  display: grid;
+  grid-template-columns: calc(var(--s) * 38) calc(var(--s) * 34) 1fr;
+  align-items: center;
+  padding: calc(var(--s) * 9) 0;
+  border-bottom: 1px solid rgba(60, 50, 30, 0.22);
+}
+.gb-list li:last-child {
+  border-bottom: 0;
+}
+.gb-no {
+  font-size: calc(var(--s) * 11);
+  color: var(--gold);
+}
+.gb-ico {
+  width: calc(var(--s) * 14);
+  height: calc(var(--s) * 14);
+  color: #2b2418;
+}
+.gb-label {
+  font-size: calc(var(--s) * 14);
+  color: #2b2418;
+}
+
+/* button (same as hero) */
+.gb-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--s) * 28);
+  height: calc(var(--s) * 44);
+  padding: 0 calc(var(--s) * 18);
+  background: var(--ink);
+  color: #fff !important;
+  font: 500 calc(var(--s) * 14) var(--body);
+  border-radius: calc(var(--s) * 7);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.gb-btn:hover {
+  transform: translateY(-1px);
+  background: #222;
+}
+.gb-btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.gb-arrow {
+  width: calc(var(--s) * 15);
+  height: calc(var(--s) * 15);
+  flex: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gb-btn {
+    transition: none;
+  }
+}
+
+/* ===================== TABLET (up to 1024px): picture on top, text below ===================== */
+@media (max-width: 1024px) {
+  .gb-section {
+    --s: clamp(1.05px, 0.15vw, 1.4px);
+    aspect-ratio: auto;
+    flex-direction: column;
+  }
+  .gb-bg {
+    position: relative;
+    inset: auto;
+    aspect-ratio: 16 / 10;
+    background-position: 22% top;
+  }
+  .gb-content {
+    margin-left: 0;
+    padding: calc(var(--s) * 36) var(--gutter) calc(var(--s) * 56);
+  }
+  .gb-content h2 {
+    font-size: calc(var(--s) * 36);
+  }
+  .gb-text {
+    font-size: calc(var(--s) * 16);
+  }
+  .gb-label {
+    font-size: calc(var(--s) * 16);
+  }
+  .gb-no {
+    font-size: calc(var(--s) * 12);
+  }
+  .gb-ico {
+    width: calc(var(--s) * 16);
+    height: calc(var(--s) * 16);
+  }
+  .gb-btn {
+    height: calc(var(--s) * 46);
+    font-size: calc(var(--s) * 15);
+  }
+}
+
+/* ===================== PHONE (up to 600px) ===================== */
+@media (max-width: 600px) {
+  .gb-section {
+    --s: 1px;
+    --gutter: 5vw;
+  }
+  .gb-bg {
+    aspect-ratio: 4 / 5;
+    background-position: 20% top;
+  }
+  .gb-content {
+    padding: 32px var(--gutter) 48px;
+  }
+  .gb-content h2 {
+    font-size: clamp(30px, 8.6vw, 38px);
+    margin-bottom: 14px;
+  }
+  .gb-text {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .gb-list li {
+    grid-template-columns: 40px 34px 1fr;
+    padding: 14px 0;
+  }
+  .gb-no {
+    font-size: 13px;
+  }
+  .gb-ico {
+    width: 18px;
+    height: 18px;
+  }
+  .gb-label {
+    font-size: 17px;
+  }
+  .gb-btn {
+    align-self: stretch;
+    height: 54px;
+    font-size: 15px;
+    padding: 0 20px;
+  }
+  .gb-arrow {
+    width: 18px;
+    height: 18px;
+  }
+}

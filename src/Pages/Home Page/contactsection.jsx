@@ -37,7 +37,7 @@ export default function ContactSection() {
     <section className="ct-section" aria-labelledby="ct-heading">
       <div className="ct-grid">
         {/* ---------- left: intro ---------- */}
-        <div className="ct-intro">
+        <div className="ct-intro" data-scroll-reveal>
           <h2 id="ct-heading">
             Let’s Find Your
             <br />
@@ -60,7 +60,7 @@ export default function ContactSection() {
         </div>
 
         {/* ---------- center: form ---------- */}
-        <form className="ct-form" onSubmit={handleSubmit}>
+        <form className="ct-form" onSubmit={handleSubmit} data-scroll-reveal>
           <div className="ct-form-head">
             <span className="ct-badge">
               <Svg>
@@ -108,6 +108,17 @@ export default function ContactSection() {
                 </button>
               ))}
             </div>
+            <select
+              className="ct-interest-select"
+              name="interest"
+              aria-label="Property interest"
+              value={interest}
+              onChange={(e) => setInterest(e.target.value)}
+            >
+              {INTERESTS.map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
           </div>
 
           <div className="ct-row">
@@ -154,7 +165,7 @@ export default function ContactSection() {
         </form>
 
         {/* ---------- right: direct contact ---------- */}
-        <aside className="ct-side">
+        <aside className="ct-side" data-scroll-reveal>
           <span className="ct-eyebrow">Immediate Access</span>
           <h3>Prefer a direct conversation?</h3>
           <p className="ct-side-text">

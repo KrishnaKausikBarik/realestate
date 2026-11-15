@@ -113,7 +113,7 @@ const Arrow = () => (
 export default function FeaturedProperties() {
   return (
     <section className="fp-section" aria-labelledby="fp-heading">
-      <div className="fp-head">
+      <div className="fp-head" data-scroll-reveal>
         <div className="fp-head-text">
           <h2 id="fp-heading">
             Featured Properties<span>.</span>
@@ -131,7 +131,7 @@ export default function FeaturedProperties() {
 
       <div className="fp-grid">
         {PROPERTIES.map((p) => (
-          <article className="fp-card" key={p.id}>
+          <article className="fp-card" key={p.id} data-scroll-reveal>
             <div className="fp-media">
               <img src={p.image} alt={`${p.title}, ${p.address}`} loading="lazy" />
               <span className="fp-pill">{p.status}</span>

@@ -50,14 +50,14 @@ const ADDRESSES = [
 export default function DesirableAddresses() {
   return (
     <section className="da-section" aria-labelledby="da-heading">
-      <h2 id="da-heading">America’s Most Desirable Addresses</h2>
-      <p className="da-sub">
+      <h2 id="da-heading" data-scroll-reveal>America’s Most Desirable Addresses</h2>
+      <p className="da-sub" data-scroll-reveal>
         From iconic city skylines to quiet coastal escapes, discover a place that moves you.
       </p>
 
       <div className="da-grid">
         {ADDRESSES.map((a) => (
-          <a className={`da-card da-${a.size}`} href="#" key={a.id}>
+          <a className={`da-card da-${a.size}`} href="#" key={a.id} data-scroll-reveal>
             <div className="da-media">
               <img src={a.image} alt={`${a.name}, ${a.location}`} loading="lazy" />
             </div>

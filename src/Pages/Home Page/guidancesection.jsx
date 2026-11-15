@@ -56,7 +56,7 @@ export default function GuidanceSection() {
     <section className="gb-section" aria-labelledby="gb-heading">
       <div className="gb-bg" style={{ backgroundImage: `url(${guidanceBg})` }} role="img" aria-label="Luxury real estate advisor standing in a modern villa" />
 
-      <div className="gb-content">
+      <div className="gb-content" data-scroll-reveal>
         <h2 id="gb-heading">
           Guidance Beyond
           <br />

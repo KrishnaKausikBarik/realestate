@@ -171,6 +171,10 @@
   background-size: calc(var(--s) * 10);
 }
 
+.ct-interest-select {
+  display: none;
+}
+
 .ct-tabs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -583,12 +587,10 @@
     height: 116px;
   }
   .ct-tabs {
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
+    display: none;
   }
-  .ct-tabs button {
-    height: 44px;
-    font-size: var(--type-small);
+  .ct-interest-select {
+    display: block;
   }
   .ct-row {
     grid-template-columns: 1fr;

@@ -43,8 +43,8 @@ const QuoteMark = () => (
 export default function Testimonials() {
   return (
     <section className="tm-section" aria-labelledby="tm-heading">
-      <h2 id="tm-heading">Experiences Beyond the Address.</h2>
-      <p className="tm-sub">
+      <h2 id="tm-heading" data-scroll-reveal>Experiences Beyond the Address.</h2>
+      <p className="tm-sub" data-scroll-reveal>
         Deep market knowledge, private access, and a highly personalized approach to
         <br />
         luxury property. Because the right home is never simply found. It is understood.
@@ -52,7 +52,7 @@ export default function Testimonials() {
 
       <div className="tm-grid">
         {TESTIMONIALS.map((t) => (
-          <figure className="tm-card" key={t.id}>
+          <figure className="tm-card" key={t.id} data-scroll-reveal>
             <div className="tm-body">
               <div className="tm-top">
                 <QuoteMark />

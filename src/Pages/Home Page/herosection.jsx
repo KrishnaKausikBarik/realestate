@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./herosection.css";
 import heroBg from "./herosectionbg.png";
 
@@ -44,20 +44,34 @@ const STATS = [
 ];
 
 export default function HeroSection() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="hs-page">
       <header className="hs-hero" style={{ backgroundImage: `url(${heroBg})` }}>
         <nav className="hs-nav" aria-label="Main">
-          <ul>
+          <ul id="hs-mobile-menu" className={menuOpen ? "is-open" : ""}>
             {NAV_LINKS.map((l) => (
               <li key={l}>
-                <a href="#">{l}</a>
+                <a href="#" onClick={() => setMenuOpen(false)}>{l}</a>
               </li>
             ))}
           </ul>
           <a className="hs-btn hs-nav-cta" href="#">
             Schedule a Visit <Arrow />
           </a>
+          <button
+            className="hs-menu-toggle"
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="hs-mobile-menu"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </nav>
 
         <div className="hs-copy">

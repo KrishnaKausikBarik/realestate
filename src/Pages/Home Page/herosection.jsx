@@ -2,10 +2,10 @@ import React from "react";
 import "./herosection.css";
 import heroBg from "./herosectionbg.png";
 
-import houseIcon from "./icons/hugeicons_guest-house.svg";
-import peopleIcon from "./icons/bi_people.svg";
-import buildingIcon from "./icons/clarity_building-line.svg";
-import awardIcon from "./icons/basil_award-outline.svg";
+import houseIcon from "./Icons/hugeicons_guest-house.svg";
+import peopleIcon from "./Icons/bi_people.svg";
+import buildingIcon from "./Icons/clarity_building-line.svg";
+import awardIcon from "./Icons/basil_award-outline.svg";
 
 const Icon = ({ children, ...props }) => (
   <svg

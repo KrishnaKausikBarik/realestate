@@ -171,7 +171,7 @@
   font-weight: 500;
   height: calc(var(--s) * 44);
   padding: 0 calc(var(--s) * 16);
-  border-radius: 999px;
+  border-radius: calc(var(--s) * 7);
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(6px);
 }
@@ -379,6 +379,11 @@
   }
   .hs-divider {
     display: none;
+  }
+}
+@media (max-width: 600px) {
+  .hs-lede {
+    font-size: var(--type-body);
   }
 }
 @media (max-width: 520px) {

@@ -242,7 +242,7 @@
     height: 16px;
   }
   .fp-card h3 {
-    font-size: var(--type-heading);
+    font-size: var(--type-title);
     margin-top: 12px;
   }
   .fp-price-row {

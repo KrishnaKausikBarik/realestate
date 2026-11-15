@@ -188,6 +188,6 @@
     font-size: var(--type-small);
   }
   .da-price {
-    font-size: var(--type-title);
+    font-size: var(--type-body);
   }
 }

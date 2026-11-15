@@ -411,7 +411,7 @@
     font-size: var(--type-heading);
   }
   .ct-intro p {
-    font-size: var(--type-title);
+    font-size: var(--type-body);
     max-width: 46ch;
   }
   .ct-stats {
@@ -531,7 +531,7 @@
     display: none;
   }
   .ct-intro p {
-    font-size: var(--type-title);
+    font-size: var(--type-body);
     margin-bottom: 22px;
   }
   .ct-stats {
@@ -615,7 +615,7 @@
     font-size: var(--type-small);
   }
   .ct-side h3 {
-    font-size: var(--type-heading);
+    font-size: var(--type-title);
   }
   .ct-side-text {
     font-size: var(--type-body);

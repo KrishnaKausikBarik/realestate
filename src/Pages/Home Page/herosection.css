@@ -368,6 +368,7 @@
     display: none;
   }
   .hs-nav ul.is-open {
+    display: flex;
     position: absolute;
     z-index: 5;
     top: calc(100% + 8px);

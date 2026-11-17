@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./herosection.css";
 import heroBg from "./herosectionbg.png";
 
@@ -46,6 +46,33 @@ const STATS = [
 export default function HeroSection() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const scrollY = window.scrollY;
+    const previousBodyStyles = {
+      position: document.body.style.position,
+      top: document.body.style.top,
+      left: document.body.style.left,
+      right: document.body.style.right,
+      width: document.body.style.width,
+      overflow: document.body.style.overflow,
+    };
+    const previousRootOverflow = document.documentElement.style.overflow;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      Object.assign(document.body.style, previousBodyStyles);
+      document.documentElement.style.overflow = previousRootOverflow;
+      window.scrollTo(0, scrollY);
+    };
+  }, [menuOpen]);
+
   return (
     <div className="hs-page">
       <header className="hs-hero" style={{ backgroundImage: `url(${heroBg})` }}>
@@ -76,10 +103,12 @@ export default function HeroSection() {
 
         <div className="hs-copy">
           <span className="hs-badge">Curated luxury real estate</span>
-          <h1>
-            Exceptional Properties.
+          <h1 aria-label="Exceptional Properties. Extraordinary Living.">
+            <span className="hs-headline-word" aria-hidden="true" style={{ "--word-index": 0 }}>Exceptional</span>{" "}
+            <span className="hs-headline-word" aria-hidden="true" style={{ "--word-index": 1 }}>Properties.</span>
             <br />
-            Extraordinary Living.
+            <span className="hs-headline-word" aria-hidden="true" style={{ "--word-index": 2 }}>Extraordinary</span>{" "}
+            <span className="hs-headline-word" aria-hidden="true" style={{ "--word-index": 3 }}>Living.</span>
           </h1>
           <p className="hs-lede">
             Discover exceptional residences across

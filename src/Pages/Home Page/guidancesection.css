@@ -52,9 +52,10 @@
   justify-content: center;
 }
 .gb-content h2 {
-  font: 500 var(--type-heading) / 1.15 var(--head);
+  font: 500 var(--type-heading) / 1.1 var(--head);
   letter-spacing: -0.01em;
-  margin-bottom: calc(var(--s) * 14);
+  min-height: 2.2em;
+  margin-bottom: calc(var(--s) * 16);
 }
 .gb-content h2 span {
   color: var(--gold);
@@ -103,7 +104,7 @@
   justify-content: space-between;
   gap: calc(var(--s) * 28);
   height: calc(var(--s) * 44);
-  padding: 0 calc(var(--s) * 18);
+  padding: 0 calc(var(--s) * 16);
   background: var(--ink);
   color: #fff !important;
   font: 500 var(--type-small) var(--body);
@@ -149,6 +150,8 @@
   }
   .gb-content h2 {
     font-size: var(--type-heading);
+    min-height: 3.3em;
+    margin-bottom: 12px;
   }
   .gb-text {
     font-size: var(--type-body);
@@ -176,14 +179,16 @@
     --gutter: 5vw;
   }
   .gb-bg {
-    aspect-ratio: 4 / 5;
-    background-position: 20% top;
+    inset: 0 0 auto;
+    aspect-ratio: 16 / 9;
+    background-size: auto 180%;
+    background-position: 0% 10%;
   }
   .gb-content {
     padding: 32px var(--gutter) 48px;
   }
   .gb-content h2 {
-    font-size: var(--type-heading);
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
     margin-bottom: 14px;
   }
   .gb-text {
@@ -205,10 +210,12 @@
     font-size: var(--type-body);
   }
   .gb-btn {
-    align-self: stretch;
-    height: 54px;
+    align-self: flex-start;
+    justify-content: center;
+    gap: 10px;
+    height: 36px;
     font-size: var(--type-small);
-    padding: 0 20px;
+    padding: 0 16px;
   }
   .gb-arrow {
     width: 18px;

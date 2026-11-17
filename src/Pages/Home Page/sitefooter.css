@@ -314,7 +314,6 @@ nav.ft-col li a:focus-visible {
     font-size: var(--type-small);
   }
   .ft-legal {
-    flex-wrap: wrap;
-    gap: 8px 12px;
+    display: none;
   }
 }

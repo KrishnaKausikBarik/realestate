@@ -164,7 +164,7 @@
   top: 50%;
   left: calc(var(--s) * 11);
   transform: translateY(-50%);
-  color: #9b9588;
+  color: #000;
   font-size: var(--type-small);
   pointer-events: none;
 }
@@ -238,7 +238,8 @@
   cursor: pointer;
   height: calc(var(--s) * 27);
   border-radius: calc(var(--s) * 6);
-  font: 400 var(--type-caption) var(--body);
+  padding: 0 calc(var(--s) * 16);
+  font: 400 var(--type-small) var(--body);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #3f3a32;
@@ -264,6 +265,7 @@
   align-items: center;
   justify-content: center;
   gap: calc(var(--s) * 18);
+  padding: 0 calc(var(--s) * 16);
   height: calc(var(--s) * 44);
   margin-top: calc(var(--s) * 6);
   border: 0;
@@ -465,7 +467,7 @@
     font-size: var(--type-heading);
   }
   .ct-intro p {
-    font-size: var(--type-body);
+    font-size: var(--type-small);
     max-width: 46ch;
   }
   .ct-stats {
@@ -508,7 +510,7 @@
   }
   .ct-tabs button {
     height: calc(var(--s) * 30);
-    font-size: var(--type-caption);
+    font-size: var(--type-small);
   }
   .ct-submit {
     height: calc(var(--s) * 48);
@@ -578,7 +580,7 @@
     row-gap: 32px;
   }
   .ct-intro h2 {
-    font-size: var(--type-heading);
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
     margin-bottom: 16px;
   }
   .ct-intro h2 br {
@@ -592,10 +594,10 @@
     max-width: none;
   }
   .ct-stats span {
-    font-size: var(--type-small);
+    font-size: var(--type-caption);
   }
   .ct-stats strong {
-    font-size: var(--type-title);
+    font-size: var(--type-small);
   }
 
   .ct-form {
@@ -631,6 +633,8 @@
   .ct-field textarea {
     height: 50px;
     font-size: var(--type-body); /* 16px stops iPhones zooming into the field */
+    border-radius: 6px;
+  }
   .ct-date-control input[type="date"] {
     height: 50px;
     padding: 0 11px;
@@ -639,14 +643,12 @@
     border-radius: 6px;
   }
   .ct-date-control > span {
-    font-size: 16px;
+    font-size: var(--type-body);
   }
   .ct-date-icon {
     width: 14px;
     height: 14px;
     right: 10px;
-  }
-    border-radius: 6px;
   }
   .ct-field textarea {
     height: 116px;
@@ -663,7 +665,7 @@
   }
   .ct-submit {
     height: 56px;
-    font-size: var(--type-body);
+    font-size: var(--type-small);
     border-radius: 10px;
   }
   .ct-arrow {
@@ -696,16 +698,16 @@
     height: 18px;
   }
   .ct-contacts small {
-    font-size: var(--type-small);
+    font-size: var(--type-caption);
   }
   .ct-contacts a {
-    font-size: var(--type-body);
+    font-size: var(--type-caption);
   }
   .ct-contacts p {
-    font-size: var(--type-small);
+    font-size: var(--type-caption);
   }
   .ct-contacts em {
-    font-size: var(--type-small);
+    font-size: var(--type-caption);
   }
   .ct-offices {
     padding: 22px;

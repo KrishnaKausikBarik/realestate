@@ -119,9 +119,7 @@ export default function FeaturedProperties() {
             Featured Properties<span>.</span>
           </h2>
           <p>
-            A curated selection of exceptional residences, each
-            <br />
-            with a story entirely its own.
+            A curated selection of exceptional residences, each with a story entirely its own.
           </p>
         </div>
         <a className="fp-btn" href="#">

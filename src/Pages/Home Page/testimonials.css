@@ -149,7 +149,7 @@
     padding-bottom: 56px;
   }
   .tm-section h2 {
-    font-size: var(--type-heading);
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
     margin-bottom: 12px;
   }
   .tm-sub {

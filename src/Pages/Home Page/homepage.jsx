@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeroSection from "./herosection";
 import FeaturedProperties from "./featuredproperties";
 import DesirableAddresses from "./desirableaddresses"
@@ -8,45 +10,45 @@ import ContactSection from "./contactsection"
 import SiteFooter from "./sitefooter"
 
 function HomePage() {
+  const pageRef = useRef(null);
+
   useEffect(() => {
-    const targets = document.querySelectorAll("[data-scroll-reveal]");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    gsap.registerPlugin(ScrollTrigger);
 
-    if (reduceMotion || !("IntersectionObserver" in window)) {
-      targets.forEach((target) => target.classList.add("is-visible"));
-      return;
-    }
+    const context = gsap.context(() => {
+      const targets = gsap.utils.toArray("[data-scroll-reveal]");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -32px 0px" },
-    );
+      if (reduceMotion) return;
 
-    targets.forEach((target) => {
-      const bounds = target.getBoundingClientRect();
-      if (bounds.top < window.innerHeight && bounds.bottom > 0) {
-        target.classList.add("is-visible");
-      } else {
-        observer.observe(target);
-      }
-    });
+      targets.forEach((target, index) => {
+        const fromX = index % 2 === 0 ? -64 : 64;
 
-    document.documentElement.classList.add("scroll-reveal-ready");
-    return () => {
-      observer.disconnect();
-      document.documentElement.classList.remove("scroll-reveal-ready");
-    };
+        gsap.fromTo(
+          target,
+          { autoAlpha: 0, x: fromX, y: 18, filter: "blur(6px)" },
+          {
+            autoAlpha: 1,
+            x: 0,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 1.15,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: target,
+              start: "top 86%",
+              once: true,
+            },
+          },
+        );
+      });
+    }, pageRef);
+
+    return () => context.revert();
   }, []);
 
   return (
-    <main>
+    <main ref={pageRef}>
       <HeroSection />
       <FeaturedProperties />
       <DesirableAddresses />

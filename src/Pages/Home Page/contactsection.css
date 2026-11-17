@@ -165,7 +165,7 @@
   top: 50%;
   left: calc(var(--s) * 11);
   transform: translateY(-50%);
-  color: #000;
+  color: #6b4226;
   font-size: var(--type-small);
   pointer-events: none;
 }
@@ -176,7 +176,7 @@
   width: calc(var(--s) * 12);
   height: calc(var(--s) * 12);
   transform: translateY(-50%);
-  color: #555;
+  color: #6b4226;
   pointer-events: none;
 }
 .ct-date-control.is-empty input[type="date"] {
@@ -196,7 +196,11 @@
 }
 .ct-date-control input[type="date"]:focus::-webkit-datetime-edit,
 .ct-date-control.has-date input[type="date"]::-webkit-datetime-edit {
-  color: var(--ink);
+  color: #6b4226;
+}
+.ct-date-control.has-date input[type="date"] {
+  color: #6b4226;
+  -webkit-text-fill-color: #6b4226;
 }
 .ct-field textarea {
   height: calc(var(--s) * 70);

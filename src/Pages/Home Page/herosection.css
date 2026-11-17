@@ -397,6 +397,8 @@
     min-height: 100dvh;
   }
   .hs-nav {
+    position: relative;
+    z-index: 10;
     grid-template-columns: 1fr auto auto;
     column-gap: 8px;
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./herosection.css";
-import heroBg from "./herosectionbg.png";
+import heroBg from "./herosectionbg.webp";
 
 import houseIcon from "./Icons/hugeicons_guest-house.svg";
 import peopleIcon from "./Icons/bi_people.svg";

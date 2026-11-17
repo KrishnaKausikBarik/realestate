@@ -1,5 +1,5 @@
 import "./guidancesection.css";
-import guidanceBg from "./Images/Guidance.png"; // <- change to your image's file name
+import guidanceBg from "./Images/Guidance.webp";
 
 const SERVICES = [
   {

@@ -45,6 +45,35 @@ const STATS = [
 
 export default function HeroSection() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [locationValue, setLocationValue] = useState("");
+  const [locationMessage, setLocationMessage] = useState("");
+  const [isLocating, setIsLocating] = useState(false);
+
+  const detectLocation = () => {
+    setLocationMessage("Detecting location…");
+    if (!navigator.geolocation) {
+      setLocationMessage("Location is unavailable");
+      return;
+    }
+
+    setIsLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        setLocationValue(`${coords.latitude.toFixed(4)}, ${coords.longitude.toFixed(4)}`);
+        setLocationMessage("");
+        setIsLocating(false);
+      },
+      (error) => {
+        setLocationMessage(
+          error.code === error.PERMISSION_DENIED
+            ? "Allow location access to detect your location"
+            : "Unable to detect location",
+        );
+        setIsLocating(false);
+      },
+      { enableHighAccuracy: false, maximumAge: 300000, timeout: 10000 },
+    );
+  };
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -176,11 +205,35 @@ export default function HeroSection() {
             <label htmlFor="hs-loc">Location</label>
             <div className="hs-value">
               <span>
-                <Icon className="hs-pin" strokeWidth="1.8">
-                  <path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z" />
-                  <circle cx="12" cy="10" r="2.5" />
-                </Icon>
-                <input id="hs-loc" placeholder="Enter Location" />
+                <button
+                  className="hs-location-detect"
+                  type="button"
+                  aria-label={isLocating ? "Detecting your location" : "Detect my location"}
+                  title={isLocating ? "Detecting your location" : "Detect my location"}
+                  onClick={detectLocation}
+                  disabled={isLocating}
+                >
+                  <Icon className="hs-pin" strokeWidth="1.8">
+                    <path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z" />
+                    <circle cx="12" cy="10" r="2.5" />
+                  </Icon>
+                </button>
+                <input
+                  id="hs-loc"
+                  placeholder={locationMessage || "Enter Location"}
+                  value={locationValue}
+                  onChange={(event) => {
+                    setLocationValue(event.target.value);
+                    setLocationMessage("");
+                  }}
+                  onFocus={() => {
+                    if (!locationValue && !isLocating && !locationMessage) {
+                      detectLocation();
+                    } else {
+                      setLocationMessage("");
+                    }
+                  }}
+                />
               </span>
               <Chevron />
             </div>

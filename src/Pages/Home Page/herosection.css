@@ -319,6 +319,18 @@
 .hs-value input {
   cursor: text;
 }
+.hs-location-detect {
+  display: grid;
+  flex: none;
+  width: 24px;
+  height: 28px;
+  place-items: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #6b4226;
+  cursor: pointer;
+}
 .hs-chev {
   width: calc(var(--s) * 9);
   height: calc(var(--s) * 9);
@@ -550,7 +562,7 @@
   .hs-primary {
     height: 36px;
     gap: 6px;
-    padding: 0 8px;
+    padding: 0 12px;
   }
   .hs-ghost {
     gap: 4px;

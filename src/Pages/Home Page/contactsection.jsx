@@ -26,6 +26,18 @@ const Svg = ({ children, className }) => (
 
 export default function ContactSection() {
   const [interest, setInterest] = useState("Buying");
+  const [preferredDate, setPreferredDate] = useState("");
+  const today = new Date();
+  const minDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
+  const openDatePicker = (e) => {
+    if (typeof e.currentTarget.showPicker !== "function") return;
+    try {
+      e.currentTarget.showPicker();
+    } catch {
+      // The native input remains interactive when showPicker is unavailable or blocked.
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -122,9 +134,26 @@ export default function ContactSection() {
           </div>
 
           <div className="ct-row">
-            <label className="ct-field">
-              <span>Preferred Date</span>
-              <input name="date" type="date" />
+            <label className="ct-field" htmlFor="ct-date">
+              <span id="ct-date-label">Preferred Date</span>
+              <div className={`ct-date-control${preferredDate ? " has-date" : " is-empty"}`}>
+                <input
+                  id="ct-date"
+                  name="date"
+                  type="date"
+                  min={minDate}
+                  value={preferredDate}
+                  onChange={(e) => setPreferredDate(e.target.value)}
+                  onFocus={openDatePicker}
+                  onClick={openDatePicker}
+                  aria-labelledby="ct-date-label"
+                />
+                {!preferredDate && <span aria-hidden="true">Select a date</span>}
+                <Svg className="ct-date-icon">
+                  <rect x="3" y="5" width="18" height="16" rx="2" />
+                  <path d="M16 3v4M8 3v4M3 10h18" />
+                </Svg>
+              </div>
             </label>
             <label className="ct-field">
               <span>Preferred Time</span>

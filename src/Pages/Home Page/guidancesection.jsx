@@ -53,14 +53,16 @@ const Svg = ({ children, className }) => (
 
 export default function GuidanceSection() {
   return (
-    <section className="gb-section" aria-labelledby="gb-heading">
+    <section id="guidance-section" className="gb-section" aria-labelledby="gb-heading">
       <div className="gb-bg" style={{ backgroundImage: `url(${guidanceBg})` }} role="img" aria-label="Luxury real estate advisor standing in a modern villa" />
 
       <div className="gb-content" data-scroll-reveal>
         <h2 id="gb-heading">
-          Guidance Beyond
-          <br />
-          the Address<span>.</span>
+          <span className="gb-heading-line">
+            <span className="gb-heading-line-inner">
+              Guidance Beyond the Address<span className="gb-period">.</span>
+            </span>
+          </span>
         </h2>
 
         <p className="gb-text">
@@ -78,8 +80,11 @@ export default function GuidanceSection() {
           ))}
         </ul>
 
-        <a className="gb-btn" href="#">
-          Meet with an advisor
+        <a className="gb-btn" href="#" data-magnetic>
+          <span className="button-label" data-button-label>
+            <span className="button-label-current">Meet with an advisor</span>
+            <span className="button-label-next" aria-hidden="true">Meet with an advisor</span>
+          </span>
           <Svg className="gb-arrow">
             <path d="M4 12h16M14 6l6 6-6 6" />
           </Svg>

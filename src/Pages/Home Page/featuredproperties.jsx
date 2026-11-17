@@ -1,4 +1,3 @@
-import React from "react";
 import "./featuredproperties.css";
 import propertyImage1 from "./Images/FeaturedProperties/008a15063da1d4b5d1a63c873a54e10cff0b219f.jpg";
 import propertyImage2 from "./Images/FeaturedProperties/1e223e1f55a922792f67c7c9bc03125a30f0a40e.jpg";
@@ -112,7 +111,7 @@ const Arrow = () => (
 
 export default function FeaturedProperties() {
   return (
-    <section className="fp-section" aria-labelledby="fp-heading">
+    <section id="featured-properties" className="fp-section" aria-labelledby="fp-heading">
       <div className="fp-head" data-scroll-reveal>
         <div className="fp-head-text">
           <h2 id="fp-heading">
@@ -122,8 +121,12 @@ export default function FeaturedProperties() {
             A curated selection of exceptional residences, each with a story entirely its own.
           </p>
         </div>
-        <a className="fp-btn" href="#">
-          Explore destinations <Arrow />
+        <a className="fp-btn" href="#" data-magnetic>
+          <span className="button-label" data-button-label>
+            <span className="button-label-current">Explore destinations</span>
+            <span className="button-label-next" aria-hidden="true">Explore destinations</span>
+          </span>
+          <Arrow />
         </a>
       </div>
 

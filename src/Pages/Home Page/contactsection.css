@@ -146,6 +146,7 @@
   height: calc(var(--s) * 34);
   font: 400 var(--type-small) var(--body);
   color: var(--ink);
+  transition: box-shadow 180ms ease, background-color 180ms ease;
 }
 .ct-date-control {
   position: relative;
@@ -215,10 +216,14 @@
 .ct-field select {
   appearance: none;
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23555' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+  color: #6b4226;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%236b4226' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right calc(var(--s) * 10) center;
   background-size: calc(var(--s) * 10);
+}
+.ct-field select option {
+  color: #6b4226;
 }
 
 .ct-interest-select {
@@ -229,7 +234,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background: var(--field);
-  border-radius: calc(var(--s) * 8);
+  border-radius: calc(var(--s) * 3);
   padding: calc(var(--s) * 3);
 }
 .ct-tabs button {
@@ -237,11 +242,11 @@
   background: none;
   cursor: pointer;
   height: calc(var(--s) * 27);
-  border-radius: calc(var(--s) * 6);
+  border-radius: calc(var(--s) * 3);
   padding: 0 calc(var(--s) * 16);
   font: 400 var(--type-small) var(--body);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   color: #3f3a32;
   transition: background 0.2s ease;
 }

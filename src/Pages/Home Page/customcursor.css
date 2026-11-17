@@ -1,0 +1,132 @@
+.cc-cursor {
+  display: none;
+}
+
+@media (min-width: 1025px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+
+  .cc-cursor {
+    display: block;
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 140ms ease;
+  }
+
+  .cc-cursor.is-visible {
+    opacity: 1;
+  }
+
+  .cc-cursor-dot-track,
+  .cc-cursor-ring-track {
+    position: fixed;
+    top: 0;
+    left: 0;
+    will-change: transform;
+  }
+
+  .cc-cursor-dot,
+  .cc-cursor-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .cc-cursor-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #6b4226;
+  }
+
+  .cc-cursor-ring {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(139, 99, 69, 0.78);
+    border-radius: 50%;
+    color: #6b4226;
+    transition:
+      width 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      height 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 240ms ease,
+      background-color 240ms ease,
+      scale 180ms ease;
+    scale: 1;
+  }
+
+  .cc-cursor-label {
+    opacity: 0;
+    font: 500 9px/1 Inter, system-ui, sans-serif;
+    letter-spacing: 0.12em;
+    transition: opacity 150ms ease;
+  }
+
+  .cc-cursor[data-state="view"] .cc-cursor-ring {
+    width: 72px;
+    height: 72px;
+    border-color: #4a2e1b;
+    background: rgba(139, 99, 69, 0.94);
+    color: #e8d8c3;
+    mix-blend-mode: normal;
+  }
+
+  .cc-cursor[data-state="view"] .cc-cursor-label {
+    opacity: 1;
+  }
+
+  .cc-cursor.is-pressed .cc-cursor-ring {
+    scale: 0.78;
+  }
+
+  .cc-cursor[data-state="view"] .cc-cursor-label::before {
+    content: "VIEW";
+  }
+
+  .fp-media,
+  .da-media {
+    position: relative;
+  }
+
+  [data-magnetic] {
+    will-change: translate;
+  }
+
+  .fp-media::after,
+  .da-media::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      140px circle at var(--cursor-x, 50%) var(--cursor-y, 50%),
+      rgba(232, 216, 195, 0.2),
+      transparent 72%
+    );
+    transition: opacity 180ms ease;
+  }
+
+  .fp-media.is-cursor-following::after,
+  .da-media.is-cursor-following::after {
+    opacity: 1;
+  }
+
+  .fp-pill {
+    z-index: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-cursor {
+    display: none !important;
+  }
+}

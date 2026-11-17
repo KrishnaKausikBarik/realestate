@@ -75,17 +75,37 @@ export default function HeroSection() {
 
   return (
     <div className="hs-page">
-      <header className="hs-hero" style={{ backgroundImage: `url(${heroBg})` }}>
+      <header className="hs-hero">
+        <div className="hs-hero-image" aria-hidden="true">
+          <img src={heroBg} alt="" />
+        </div>
         <nav className="hs-nav" aria-label="Main">
           <ul id="hs-mobile-menu" className={menuOpen ? "is-open" : ""}>
             {NAV_LINKS.map((l) => (
               <li key={l}>
-                <a href="#" onClick={() => setMenuOpen(false)}>{l}</a>
+                <a
+                  href={
+                    l === "Properties"
+                      ? "#featured-properties"
+                      : l === "Services"
+                        ? "#guidance-section"
+                        : l === "Contact"
+                          ? "#ct-heading"
+                          : "#"
+                  }
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {l}
+                </a>
               </li>
             ))}
           </ul>
-          <a className="hs-btn hs-nav-cta" href="#">
-            Schedule a Visit <Arrow />
+          <a className="hs-btn hs-nav-cta" href="#" data-magnetic>
+            <span className="button-label" data-button-label>
+              <span className="button-label-current">Schedule a Visit</span>
+              <span className="button-label-next" aria-hidden="true">Schedule a Visit</span>
+            </span>
+            <Arrow />
           </a>
           <button
             className="hs-menu-toggle"
@@ -104,11 +124,18 @@ export default function HeroSection() {
         <div className="hs-copy">
           <span className="hs-badge">Curated luxury real estate</span>
           <h1 aria-label="Exceptional Properties. Extraordinary Living.">
-            <span className="hs-headline-word" aria-hidden="true" style={{ "--word-index": 0 }}>Exceptional</span>{" "}
-            <span className="hs-headline-word" aria-hidden="true" style={{ "--word-index": 1 }}>Properties.</span>
-            <br />
-            <span className="hs-headline-word" aria-hidden="true" style={{ "--word-index": 2 }}>Extraordinary</span>{" "}
-            <span className="hs-headline-word" aria-hidden="true" style={{ "--word-index": 3 }}>Living.</span>
+            <span className="hs-headline-line" aria-hidden="true">
+              <span className="hs-headline-line-inner">
+                <span className="hs-headline-word">Exceptional</span>{" "}
+                <span className="hs-headline-word">Properties.</span>
+              </span>
+            </span>
+            <span className="hs-headline-line" aria-hidden="true">
+              <span className="hs-headline-line-inner">
+                <span className="hs-headline-word">Extraordinary</span>{" "}
+                <span className="hs-headline-word">Living.</span>
+              </span>
+            </span>
           </h1>
           <p className="hs-lede">
             Discover exceptional residences across
@@ -116,16 +143,23 @@ export default function HeroSection() {
             America's most desirable markets.
           </p>
           <div className="hs-ctas">
-            <a className="hs-btn hs-primary" href="#">
-              Explore Properties <Arrow />
+            <a className="hs-btn hs-primary" href="#" data-magnetic>
+              <span className="button-label" data-button-label>
+                <span className="button-label-current">Explore Properties</span>
+                <span className="button-label-next" aria-hidden="true">Explore Properties</span>
+              </span>
+              <Arrow />
             </a>
-            <a className="hs-ghost" href="#">
+            <a className="hs-ghost" href="#" data-magnetic>
               <i>
                 <Icon>
                   <path d="M2 12l5-3 4 3 4-3 7 4M7 9V6M15 9V6" />
                 </Icon>
               </i>
-              Meet Our Advisors
+              <span className="button-label" data-button-label>
+                <span className="button-label-current">Meet Our Advisors</span>
+                <span className="button-label-next" aria-hidden="true">Meet Our Advisors</span>
+              </span>
             </a>
           </div>
         </div>
@@ -178,8 +212,12 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <a className="hs-btn hs-search-btn" href="#">
-            Search Properties <Arrow />
+          <a className="hs-btn hs-search-btn" href="#" data-magnetic>
+            <span className="button-label" data-button-label>
+              <span className="button-label-current">Search Properties</span>
+              <span className="button-label-next" aria-hidden="true">Search Properties</span>
+            </span>
+            <Arrow />
           </a>
         </form>
       </header>

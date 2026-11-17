@@ -1,0 +1,150 @@
+/* Shared interaction polish: keep the existing button geometry and palette intact. */
+:is(.hs-btn, .hs-ghost, .fp-btn, .gb-btn, .ct-submit, .ct-tabs button,
+  .hs-go, .hs-menu-toggle, .ft-socials a) {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 380ms;
+}
+
+:is(.hs-btn, .hs-ghost, .fp-btn, .gb-btn, .ct-submit, .ct-tabs button,
+  .hs-go, .hs-menu-toggle, .ft-socials a):active {
+  transform: scale(0.985);
+}
+
+:is(.hs-btn, .fp-btn, .gb-btn, .ct-submit) {
+  background-image: linear-gradient(#222, #222);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition-property: transform, background-size, color, box-shadow;
+  transition-duration: 700ms;
+}
+
+:is(.hs-btn, .fp-btn, .gb-btn, .ct-submit):is(:hover, :focus-visible) {
+  background-size: 100% 100%;
+  transform: scale(1.015);
+}
+
+:is(.hs-btn, .fp-btn, .gb-btn, .ct-submit) :is(.hs-arrow, .fp-arrow, .gb-arrow, .ct-arrow) {
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(.hs-btn, .fp-btn, .gb-btn, .ct-submit):is(:hover, :focus-visible)
+  :is(.hs-arrow, .fp-arrow, .gb-arrow, .ct-arrow) {
+  transform: translateX(5px);
+}
+
+.hs-ghost {
+  transition-property: transform;
+}
+
+.button-label {
+  position: relative;
+  display: inline-block;
+  height: 1.25em;
+  overflow: hidden;
+  line-height: 1.25;
+  vertical-align: middle;
+}
+
+.button-label-current,
+.button-label-next {
+  display: block;
+  white-space: nowrap;
+  transition: transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.button-label-next {
+  position: absolute;
+  inset: 0 auto auto 0;
+  transform: translateY(105%);
+}
+
+:is(.hs-btn, .hs-ghost, .fp-btn, .gb-btn, .ct-submit, .ct-tabs button):is(:hover, :focus-visible)
+  .button-label-current {
+  transform: translateY(-105%);
+}
+
+:is(.hs-btn, .hs-ghost, .fp-btn, .gb-btn, .ct-submit, .ct-tabs button):is(:hover, :focus-visible)
+  .button-label-next {
+  transform: translateY(0);
+}
+
+.hs-nav ul a {
+  position: relative;
+  transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1), color 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hs-nav ul a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hs-nav ul a:is(:hover, :focus-visible)::after {
+  transform: scaleX(1);
+}
+
+:is(.ct-tabs button, .hs-go, .hs-menu-toggle, .ft-socials a) {
+  transition-property: transform, color, background-color, box-shadow;
+}
+
+:is(.ct-submit, button):disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+  transform: none;
+}
+
+:is(.ct-submit, button):disabled {
+  background-image: none;
+}
+
+:is(.ct-submit, button)[aria-busy="true"] {
+  cursor: progress;
+  opacity: 0.8;
+}
+
+:is(.hs-btn, .hs-ghost, .fp-btn, .gb-btn, .ct-submit, .ct-tabs button,
+  .hs-go, .hs-menu-toggle, .ft-socials a):active {
+  transform: scale(0.985);
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  :is(.hs-btn, .hs-ghost, .fp-btn, .gb-btn, .ct-submit, .ct-tabs button,
+    .hs-go, .hs-menu-toggle, .ft-socials a) {
+    transition-duration: 0.01ms;
+  }
+
+  :is(.hs-btn, .hs-ghost, .fp-btn, .gb-btn, .ct-submit, .ct-tabs button,
+    .hs-go, .hs-menu-toggle, .ft-socials a):is(:hover, :active) {
+    transform: none;
+  }
+
+  :is(.hs-btn, .fp-btn, .gb-btn, .ct-submit):is(:hover, :focus-visible) {
+    background-size: 0% 100%;
+  }
+
+  :is(.hs-btn, .fp-btn, .gb-btn, .ct-submit):is(:hover, :focus-visible)
+    :is(.hs-arrow, .fp-arrow, .gb-arrow, .ct-arrow) {
+    transform: none;
+  }
+
+  .button-label-current,
+  .button-label-next {
+    transition: none;
+  }
+
+  .button-label-next {
+    display: none;
+  }
+
+  .button-label-current {
+    transform: none !important;
+  }
+}

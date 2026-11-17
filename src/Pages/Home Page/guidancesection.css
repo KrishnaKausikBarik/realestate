@@ -54,11 +54,19 @@
 .gb-content h2 {
   font: 500 var(--type-heading) / 1.1 var(--head);
   letter-spacing: -0.01em;
-  min-height: 2.2em;
+  min-height: 1.1em;
   margin-bottom: calc(var(--s) * 16);
+  white-space: nowrap;
 }
-.gb-content h2 span {
+.gb-content h2 .gb-period {
   color: var(--gold);
+}
+.gb-heading-line {
+  display: block;
+  overflow: hidden;
+}
+.gb-heading-line-inner {
+  display: block;
 }
 .gb-text {
   font-size: var(--type-small);
@@ -150,7 +158,7 @@
   }
   .gb-content h2 {
     font-size: var(--type-heading);
-    min-height: 3.3em;
+    min-height: 1.1em;
     margin-bottom: 12px;
   }
   .gb-text {
@@ -188,7 +196,7 @@
     padding: 32px var(--gutter) 48px;
   }
   .gb-content h2 {
-    font-size: clamp(1.5rem, 6vw, 1.8rem);
+    font-size: clamp(1rem, 5.5vw, 1.375rem);
     margin-bottom: 14px;
   }
   .gb-text {

@@ -8,11 +8,34 @@
   --type-heading: clamp(1.875rem, 1.55rem + 1.25vw, 2.5rem);
   --type-display: clamp(2.75rem, 2rem + 3vw, 4.5rem);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}@media (max-width: 600px) {
+}
+
+::selection {
+  background-color: #8b6345;
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: #8b6345;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
   html,
   body,
   #root {

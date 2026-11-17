@@ -116,7 +116,10 @@ export default function ContactSection() {
                   className={interest === t ? "is-active" : ""}
                   onClick={() => setInterest(t)}
                 >
-                  {t}
+                  <span className="button-label" data-button-label>
+                    <span className="button-label-current">{t}</span>
+                    <span className="button-label-next" aria-hidden="true">{t}</span>
+                  </span>
                 </button>
               ))}
             </div>
@@ -177,8 +180,11 @@ export default function ContactSection() {
             />
           </label>
 
-          <button className="ct-submit" type="submit">
-            Schedule a Consultation
+          <button className="ct-submit" type="submit" data-magnetic>
+            <span className="button-label" data-button-label>
+              <span className="button-label-current">Schedule a Consultation</span>
+              <span className="button-label-next" aria-hidden="true">Schedule a Consultation</span>
+            </span>
             <Svg className="ct-arrow">
               <path d="M4 12h16M14 6l6 6-6 6" />
             </Svg>
